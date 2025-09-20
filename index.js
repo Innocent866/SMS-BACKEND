@@ -18,5 +18,5 @@ app.get('/', (req, res)=>{
 
 // Start Server
 app.listen(PORT, ()=>{
-    console.log(`Server listening to port: http://localhost:${PORT}`);
+    console.log(`Servesndn listening to port: http://localhost:${PORT}`);
 })
