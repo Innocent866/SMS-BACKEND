@@ -1,6 +1,7 @@
 // Server entering
 const express = require("express");
 const dotenv = require("dotenv");
+const connectDB = require("./db/dbconnection");
 
 dotenv.config();
 
@@ -17,6 +18,11 @@ app.get('/', (req, res)=>{
 })
 
 // Start Server
-app.listen(PORT, ()=>{
-    console.log(`Servesndn listening to port: http://localhost:${PORT}`);
+connectDB()
+.then(async()=>{
+    app.listen(PORT, ()=>{
+        console.log(`Servesn listening to port: http://localhost:${PORT}`);
+    })
+}).catch((error)=>{
+    console.log(`Error: ${error}`);  
 })
