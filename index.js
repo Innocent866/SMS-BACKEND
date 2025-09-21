@@ -1,9 +1,9 @@
+require("dotenv").config();
+
 // Server entering
 const express = require("express");
-const dotenv = require("dotenv");
 const connectDB = require("./db/dbconnection");
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,8 +21,8 @@ app.get('/', (req, res)=>{
 connectDB()
 .then(async()=>{
     app.listen(PORT, ()=>{
-        console.log(`Servesn listening to port: http://localhost:${PORT}`);
+        console.log(`Server listening to port: http://localhost:${PORT}`);
     })
 }).catch((error)=>{
-    console.log(`Error: ${error}`);  
+    console.log(`Error: ${error}`); 
 })
